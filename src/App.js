@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+import logo from './datadog.svg';
+import {useState} from 'react'
 import './App.css';
+import Button from '@mui/material/Button';
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <img src={logo} style={{height: '300px'}} alt="logo" />
+        
+        <p style={{color: '#6833a9'}}>
+          {count}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button variant='contained' onClick={() => setCount(count + 1)}>Bump</Button>
       </header>
     </div>
   );
